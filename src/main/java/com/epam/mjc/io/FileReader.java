@@ -10,8 +10,6 @@ import java.util.Map;
 
 public class FileReader {
 
-
-
     public static Profile getDataFromFile(File file) {
 
         String line;
@@ -22,8 +20,6 @@ public class FileReader {
                 String[] keyValue = line.split(": ");
                 profile.put(keyValue[0], keyValue[1]);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
