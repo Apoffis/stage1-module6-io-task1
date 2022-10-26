@@ -10,12 +10,7 @@ import java.util.Map;
 
 public class FileReader {
 
-    public static void main(String[] args) {
 
-        File file = new File("src/main/resources/Profile.txt");
-        System.out.println(getDataFromFile(file));
-
-    }
 
     public static Profile getDataFromFile(File file) {
 
@@ -28,9 +23,9 @@ public class FileReader {
                 profile.put(keyValue[0], keyValue[1]);
             }
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return new Profile(profile.get("Name"), Integer.parseInt(profile.get("Age")), profile.get("Email"), Long.parseLong(profile.get("Phone")));
     }
