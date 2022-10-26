@@ -9,11 +9,12 @@ import java.util.Map;
 
 public class FileReader {
 
-    private FileReader() {
-        throw new IllegalStateException("Utility class");
+    public static void main(String[] args) {
+        File file = new File("src/main/resources/Profile.txt");
+        new FileReader().getDataFromFile(file);
     }
 
-    public static Profile getDataFromFile(File file) {
+    public Profile getDataFromFile(File file) {
 
         String line;
         Map<String, String> profile = new HashMap<>();
